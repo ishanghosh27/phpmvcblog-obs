@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Libraries;
-
 
 class database
 {
@@ -10,22 +8,17 @@ class database
     private $pass = "12Qwerty@";
     private $dbname = "phpmvc";
     private $conn;
-
-    function __construct()
+    public function __construct()
     {
-
         $this->conn = new \mysqli(
             $this->host,
             $this->user,
-
             $this->pass,
-            $this->dbname
+            $this->dbname,
         );
         if ($this->conn->connect_error) {
-            die("Connection failed: "
-                . $this->conn->connect_error);
+            die("Connection failed: " . $this->conn->connect_error);
         } else {
-
         }
     }
     public function execute($query)
@@ -34,6 +27,3 @@ class database
         return $result;
     }
 }
-
-
-?>

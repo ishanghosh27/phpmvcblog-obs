@@ -7,8 +7,9 @@ function set_session($data)
 }
 function is_logged_in()
 {
-    if (isset($_SESSION["user"]))
+    if (isset($_SESSION["user"])) {
         return true;
+    }
     return false;
 }
 function log_out()
@@ -16,4 +17,3 @@ function log_out()
     session_unset();
     session_destroy();
 }
-?>
